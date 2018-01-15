@@ -55,8 +55,15 @@
 			</div>
 		</div>
 		<script type="text/javascript">
+			var flag = false;
 			clickMe.addEventListener('click', function(e) {
-				popover.style.display = 'block'
+				if(!flag){
+					popover.style.display = 'block'
+					flag = true;
+				}else{
+					popover.style.display = 'none'
+					flag = false
+				}
 			})
 			wrapper.addEventListener('click', function(e) {
 				e.stopPropagation()
@@ -64,6 +71,7 @@
 
 			document.addEventListener('click', function() {
 				popover.style.display = 'none'
+				flag = false
 			})
 		</script>
 	</body>
